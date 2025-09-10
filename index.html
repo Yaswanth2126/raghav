@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Basic Website — New</title>
+  <style>
+    /* Simple inline styles (still part of HTML file) */
+    :root {
+      --bg: #f6f8fb;
+      --card: #ffffff;
+      --accent: #0366d6;
+      --muted: #666;
+      --radius: 10px;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:#111;line-height:1.45}
+    .wrap{max-width:980px;margin:28px auto;padding:18px}
+    header{display:flex;justify-content:space-between;align-items:center;gap:12px}
+    header h1{margin:0;font-size:1.25rem}
+    nav a{color:var(--accent);text-decoration:none;margin-left:12px;font-weight:600}
+    .hero{background:var(--card);padding:18px;border-radius:var(--radius);box-shadow:0 8px 24px rgba(10,20,40,0.06);margin-top:14px}
+    .lead{color:var(--muted);margin:8px 0 0}
+    .grid{display:grid;grid-template-columns:1fr 320px;gap:16px;margin-top:16px}
+    @media (max-width:820px){.grid{grid-template-columns:1fr}}
+    .card{background:var(--card);padding:14px;border-radius:10px;box-shadow:0 6px 18px rgba(10,20,40,0.04)}
+    h2{margin-top:0}
+    ul{padding-left:20px}
+    footer{text-align:center;color:var(--muted);margin-top:18px;font-size:0.95rem}
+    .btn{display:inline-block;padding:10px 14px;background:var(--accent);color:#fff;border-radius:8px;text-decoration:none}
+    .muted{color:var(--muted)}
+    label{display:block;margin-top:8px;font-weight:600}
+    input[type="text"], textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #e6edf3;margin-top:6px}
+    input[type="submit"]{margin-top:10px;padding:10px 12px;border-radius:8px;background:#2d9cdb;color:#fff;border:0;cursor:pointer}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>My Basic Website</h1>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#purpose">Purpose</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <h2>Welcome</h2>
+      <p class="lead">A simple, beginner-friendly static website built with only HTML (and inline CSS). Use it to learn structure, layout, and content organization.</p>
+      <p style="margin-top:12px"><a class="btn" href="#purpose">Read Purpose</a></p>
+    </section>
+
+    <div class="grid">
+      <main>
+        <section id="about" class="card">
+          <h2>About this project</h2>
+          <p class="muted">
+            This starter website demonstrates semantic HTML structure (header, main, aside, footer),
+            responsive layout using CSS grid, and simple navigation anchored to sections.
+            It intentionally uses no JavaScript so beginners can focus on markup and basic styling.
+          </p>
+        </section>
+
+        <section id="purpose" class="card" style="margin-top:12px">
+          <h2>Purpose</h2>
+          <p>
+            This basic web application is designed as a simple learning project for beginners to understand how HTML,
+            CSS, and minimal layout techniques come together to build an accessible and responsive website.
+            It provides clear sections for information, features a contact example that opens the user's email client,
+            and serves as a safe sandbox for experimenting with content and styles without needing a server or tools.
+          </p>
+        </section>
+
+        <section id="features" class="card" style="margin-top:12px">
+          <h2>Key features</h2>
+          <ul>
+            <li>Single-file HTML (easy to edit and share)</li>
+            <li>Responsive layout using CSS grid and media queries</li>
+            <li>Clear semantic structure for accessibility</li>
+            <li>Static contact example (mailto) and a demo form</li>
+          </ul>
+        </section>
+      </main>
+
+      <aside>
+        <div class="card">
+          <h3 id="contact">Contact</h3>
+          <p class="muted">Click the button to open your email program and send a message:</p>
+          <p style="margin-top:10px"><a class="btn" href="mailto:you@example.com?subject=Hello%20from%20Basic%20Website">Email Us</a></p>
+
+          <hr style="margin:12px 0">
+
+          <h4>Demo message (static)</h4>
+          <form action="#" method="get" aria-label="demo message">
+            <label for="nm">Name</label>
+            <input id="nm" name="name" type="text" placeholder="Your name">
+
+            <label for="msg">Message</label>
+            <textarea id="msg" name="message" rows="4" placeholder="Your message"></textarea>
+
+            <input type="submit" value="Submit (demo)">
+            <p class="muted" style="margin-top:8px">Note: This demo form is static and does not send data.</p>
+          </form>
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      <p>&copy; <span id="year">2025</span> — Built with pure HTML</p>
+    </footer>
+  </div>
+</body>
+</html>
